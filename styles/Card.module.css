@@ -1,0 +1,17 @@
+.card {
+    padding-top: 30px;
+    border-radius: 2px;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, .8);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.title {
+    font-size: 25px;
+    font-weight: 600;
+}
+.image {
+    width: 100%;
+}
+.rowsWrapper:last-child {
+    border: none;
+}
