@@ -27,9 +27,10 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+    height: 100vh;
   }
   body {
-    color: white;
-    background: black;
+    color: #808080;
+    height: 100vh;
   }
 }

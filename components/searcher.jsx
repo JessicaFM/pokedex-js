@@ -1,8 +1,15 @@
 import searcherStyles from '../styles/Searcher.module.css'
+import Router from 'next/router'
 
-export default function Searcher() {
 
-    state
+function Searcher() {
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        Router.push({
+            pathname: `/search/${e.target.search.value}`,
+        })
+    }
 
     return (
         <div className={ searcherStyles.searcher }>
@@ -18,3 +25,5 @@ export default function Searcher() {
         </div>
     )
 }
+
+export default Searcher

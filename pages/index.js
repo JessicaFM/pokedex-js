@@ -1,6 +1,4 @@
-import Title from '../components/title.jsx'
 import Cards from '../components/cards.jsx';
-import Searcher from '../components/searcher.jsx';
 import styles from '../styles/Home.module.css'
 
 const initialPokemons = [1, 2, 3]
@@ -8,12 +6,8 @@ const initialPokemons = [1, 2, 3]
 function Home({ pokemon1, pokemon2, pokemon3 }) {
   let pokemonArray = [ pokemon1, pokemon2, pokemon3 ]
   return (
-    <div className="container mx-auto">
-      <Title text='Pokemons'/>
-      <Searcher />
-      <Cards 
+    <Cards 
         pokemons = { pokemonArray } />
-    </div>
   )
 }
 
