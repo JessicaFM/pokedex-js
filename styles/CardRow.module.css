@@ -3,3 +3,12 @@
     justify-content: space-between;
     border-bottom: 1px solid #D3D3D3;
 }
+.cardRowTitle {
+    font-size: 30px;
+}
+.cardRowSubTitle {
+    font-size: 23px;
+}
+.borderRow {
+    border-bottom: 1px solid #D3D3D3;
+}

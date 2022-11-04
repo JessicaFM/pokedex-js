@@ -1,12 +1,17 @@
 .card {
     padding-top: 30px;
     border-radius: 2px;
-    padding: 10px 15px;
-    background-color: rgba(255, 255, 255, .8);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 6px;
+}
+.cardFullHeight  {
+    height: 100%;
+}
+.cardData {
+    display: grid;
+    background-color: white;
 }
 .title {
-    font-size: 25px;
+    font-size: 33px;
     font-weight: 600;
 }
 .image {
@@ -14,4 +19,24 @@
 }
 .rowsWrapper:last-child {
     border: none;
+}
+.cardWrapper {
+    border: 5px double #ffd700;
+    display: grid;
+    background-size: contain;
+    background-position: center;
+    background-size: cover;
+}
+.cardArtwork {
+    background-size: contain;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    padding: 10px;
+
+}
+.cardOpacity {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    color: #202020;
 }

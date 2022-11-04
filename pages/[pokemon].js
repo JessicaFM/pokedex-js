@@ -2,6 +2,9 @@ import { useRouter } from 'next/router'
 import Card from '../components/card.jsx'
 import PokemonData from '../components/pokemonData.jsx'
 import PokemonImage from '../components/pokemonImage.jsx'
+import styleCard from '../styles/Card.module.css'
+import styleCardRow from '../styles/CardRow.module.css'
+import bg from '../images/bg_3.jpeg';
 
 function Pokemon({ data }) {
     const router = useRouter()
@@ -14,9 +17,18 @@ function Pokemon({ data }) {
                     We found a pokemon!
                 </div>
                 <div className="grid grid-cols-2 gap-2">
-                    <div>
-                        <Card 
-                            pokemon = { data } />
+                    <div className={ `${styleCard.card} ${styleCard.cardFullHeight} ${styleCard.cardData}` }>
+                        <div className= { styleCard.cardWrapper } 
+                            style={{
+                                backgroundImage: `url(${bg.src})`,
+                                width: '100%',
+                                height: '100%',
+                            }}>
+                            <div className = { styleCard.cardOpacity }>
+                                <Card 
+                                    pokemon = { data } />
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <PokemonData 
