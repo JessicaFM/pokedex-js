@@ -1,7 +1,7 @@
 import CardDataRow from '../components/cardDataRow.jsx';
 import styleCard from '../styles/Card.module.css'
 import styleCardRow from '../styles/CardRow.module.css'
-import bg from '../images/artwork_bg_3.png';
+import bg from '../images/bg_4.jpeg';
 
 function PokemonData( { pokemon }) {
     return (

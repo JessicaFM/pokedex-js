@@ -1,7 +1,6 @@
 .cardRow {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #D3D3D3;
 }
 .cardRowTitle {
     font-size: 30px;
@@ -10,5 +9,14 @@
     font-size: 23px;
 }
 .borderRow {
-    border-bottom: 1px solid #D3D3D3;
+    border-bottom: 2px solid #202020;
+}
+.types {
+    width: 25px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    border-radius: 20px;
 }

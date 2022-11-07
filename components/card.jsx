@@ -1,42 +1,32 @@
 import cardStyles from '../styles/Card.module.css'
-import Image from 'next/image'
-import CardRow from './cardRow.jsx'
+import CardHeader from './cardHeader'
+import CardBody from './cardBody'
+import CardBottom from './cardBottom'
+import bg from '../images/bg_4.jpeg';
 
 function Card({ pokemon }) {
     return (
         <div className = { cardStyles.card }>
-            <div className="">
-                <div className = { cardStyles.title }>
-                    { pokemon.name }
-                </div>
-                <div className = { cardStyles.image }
-                style={{width: '100%', height: '100%', position: 'relative'}}>
-                    <Image  
-                        src={ pokemon.sprites.front_default }
-                        layout='fill'
-                        alt='Mountains'
-                        width='500'
-                        height='500'
+            <div className={ cardStyles.cardWrapper }
+                style={{
+                    backgroundImage: `url(${bg.src})`,
+                    width: '100%',
+                    height: '100%',
+                }}>
+                <div className = { cardStyles.cardOpacity }>
+                    <CardHeader 
+                        pokemon = { pokemon }
                     />
-                </div> 
-                <div className={ cardStyles.rowsWrapper}>
-                    <CardRow
-                        type="specie"
-                        value={ pokemon.species.name }
+
+                    <CardBody
+                        pokemon = { pokemon }
                     />
-                    <CardRow
-                        type="weight"
-                        value={ pokemon.weight }
-                    />
-                    <CardRow
-                        type="height"
-                        value={ pokemon.height }
-                    />
-                    <CardRow
-                        type="base experience"
-                        value={ pokemon.base_experience }
+
+                    <CardBottom 
+                        pokemon = { pokemon }
                     />
                 </div>
+                
             </div>
         </div>
     )
