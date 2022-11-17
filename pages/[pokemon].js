@@ -9,39 +9,30 @@ function Pokemon({ data }) {
     if (router.isFallback)  return <div>Loading...</div>;
     else {
         return (
-            <>
-            { notFound &&
-                <div className="">Not found</div>
-            }
-            { !notFound &&
+            <div className="">
                 <div className="">
-                    <div className="">
-                    We found a pokemon!
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                        <Card 
-                            pokemon = { data } />
-                        <PokemonData 
-                            pokemon = { data }/>
-                    </div>
-                    <div className="pt-7 grid grid-cols-3 gap-4">
-                        <PokemonImage
-                            name = "artwork"
-                            image = { data.sprites.other.home.front_default }
-                        />
-                        <PokemonImage
-                            name = "front"
-                            image = { data.sprites.front_default }
-                        />
-                        <PokemonImage
-                            name = "back"
-                            image = { data.sprites.back_default }
-                        />
-                    </div>
                 </div>
-                }
-                
-            </>
+                <div className="grid grid-cols-2 gap-2">
+                    <Card 
+                        pokemon = { data } />
+                    <PokemonData 
+                        pokemon = { data }/>
+                </div>
+                <div className="pt-7 grid grid-cols-3 gap-4">
+                    <PokemonImage
+                        name = "artwork"
+                        image = { data.sprites.other.home.front_default }
+                    />
+                    <PokemonImage
+                        name = "front"
+                        image = { data.sprites.front_default }
+                    />
+                    <PokemonImage
+                        name = "back"
+                        image = { data.sprites.back_default }
+                    />
+                </div>
+            </div>
         )
     }
 }
@@ -64,9 +55,9 @@ export async function getStaticProps(context) {
     } catch (err) {
         console.log(err);
     }
+    console.log(data)
     
     if (!data) {
-        console.log(params)
         return {
             notFound: true,
         }

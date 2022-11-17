@@ -1,35 +1,27 @@
 import Cards from '../components/cards.jsx';
+import List from '../components/list.jsx';
 import styles from '../styles/Home.module.css'
 
-const initialPokemons = [1, 2, 3]
+let limit = 10
+let offset = 0
 
-function Home({ pokemon1, pokemon2, pokemon3 }) {
-  let pokemonArray = [ pokemon1, pokemon2, pokemon3 ]
+function Home({ pokemons }) {
   return (
-    <Cards 
-        pokemons = { pokemonArray } />
-  )
+    <List 
+      pokemons = { pokemons } />
+  ) 
 }
 
 export async function getStaticProps()  {
-  const [ pokemon1Res, pokemon2Res, pokemon3Res ] = await Promise.all([
-    fetch('https://pokeapi.co/api/v2/pokemon/1'),
-    fetch('https://pokeapi.co/api/v2/pokemon/2'),
-    fetch('https://pokeapi.co/api/v2/pokemon/3')
-  ])
-
-  const [ pokemon1, pokemon2, pokemon3 ] = await Promise.all([
-    pokemon1Res.json(),
-    pokemon2Res.json(),
-    pokemon3Res.json(),
-  ])
+  let url = "https://pokeapi.co/api/v2/pokemon/?limit=" + limit + "&offset=" + offset
+  const res = await fetch(url)
+  let pokemons = await res.json()
+  pokemons = pokemons.results?pokemons.results:null
 
   return {
     props: {
-      pokemon1,
-      pokemon2,
-      pokemon3
-    },
+      pokemons
+    }
   }
 }
 

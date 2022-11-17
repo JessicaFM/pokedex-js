@@ -1,0 +1,26 @@
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
+    grid-auto-rows: minmax(45px, auto);
+    border: 1px solid #C0C0C0;
+    border-bottom: none;
+    background-color: white;
+}
+.row:last-child {
+    border-bottom: 1px solid #C0C0C0;;
+}
+.divAuto {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.rowWrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rowWrapper:nth-child(odd) {
+    border-right: 1px solid #C0C0C0
+}
