@@ -1,0 +1,14 @@
+.paginatorContent {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+}
+.paginatorBtn {
+    padding: 4px 7px;
+    border: 1px solid #E6E6FA;
+    background-color: white;
+}
+.paginatorBtn.active {
+    background-color: #FFD700;
+}

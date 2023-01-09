@@ -1,11 +1,13 @@
+import useOffset from '../hooks/useOffset.jsx';
 import List from '../components/list.jsx';
 import Paginator from '../components/paginator.jsx';
-import styles from '../styles/Home.module.css'
 
 let limit = 10 // number by pages
-let offset = 0 // max
+let page = 0
 
 function Home({ pokemons, total }) {
+  const [offset, setOffset] = useOffset();
+
   return (
     <>
       <List 
@@ -14,6 +16,7 @@ function Home({ pokemons, total }) {
       <Paginator
         totalPages = { total }
         currentPage = { offset }
+        itemsPage = { limit }
       />
     </>
     
@@ -21,7 +24,7 @@ function Home({ pokemons, total }) {
 }
 
 export async function getStaticProps()  {
-  let url = "https://pokeapi.co/api/v2/pokemon/?limit=" + limit + "&offset=" + offset
+  let url = "https://pokeapi.co/api/v2/pokemon/?limit=" + limit + "&offset=" + page
   const res = await fetch(url)
   let pokemons = await res.json()
   let total = 0
