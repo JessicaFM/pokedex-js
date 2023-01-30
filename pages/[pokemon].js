@@ -51,11 +51,9 @@ export async function getStaticProps(context) {
     try {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${ params.pokemon }`)
         data = await res.json()
-        console.log(data);
     } catch (err) {
         console.log(err);
     }
-    console.log(data)
     
     if (!data) {
         return {

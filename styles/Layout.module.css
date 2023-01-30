@@ -1,0 +1,14 @@
+.customContainer {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+.main {
+    flex: 1 1;
+}
+.centerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}

@@ -48,15 +48,10 @@ export async function getStaticProps(context) {
     const { params } = context
     const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=2000')
     const data = await res.json()
-
     const notFound = data.results ? false : true;
 
     let term = params.pokemon
     let search = new RegExp(term, 'i')
-    
-    console.log(search)
-    
-    console.log(search)
     let results = (data.results).filter(
         items => search.test(items.name)
     )

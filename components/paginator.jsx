@@ -1,19 +1,30 @@
 import useOffset from '../hooks/useOffset.jsx';
 import stylePaginator from '../styles/Paginator.module.css'
 
-export default function Paginator({ totalPages, currentPage, itemsPage }) {
+export default function Paginator({ totalPages, currentPage, itemsPage, updateOffset }) {
     const [offset, setOffset] = useOffset();
 
-    function nextPage() {
-        setOffset(offset => offset + 1)
+    function goToPage(page) {
+        setOffset(page)
+        updateOffset(page)
     };
+
+    // TODO
+    function nextPage() {
+        console.log("Next page")
+    }
+
+    function prevPage() {
+        console.log("Prev")
+    }
 
     let maxPages = Math.round(totalPages/itemsPage)
     let btnPages = []
     for(let i = currentPage; i < currentPage + 5; i++) {
         btnPages.push(
             <button className= { `${stylePaginator.paginatorBtn} ${currentPage == i?stylePaginator.active:""}` }
-                key={i}>
+                key={i}
+                onClick={() => goToPage(i)}>
                     { i }
             </button>
         )
@@ -22,11 +33,11 @@ export default function Paginator({ totalPages, currentPage, itemsPage }) {
     return (
         <div className= { stylePaginator.paginatorContent }>
             { currentPage > 0 &&
-                <button className= { stylePaginator.paginatorBtn }>
+                <button className= { stylePaginator.paginatorBtn }
+                    onClick={ prevPage }>
                     { ' << '}
                 </button>
             }
-            
             { btnPages }
             <button className= { stylePaginator.paginatorBtn }>
                 { '...' }
@@ -38,7 +49,7 @@ export default function Paginator({ totalPages, currentPage, itemsPage }) {
                         { maxPages }
                     </button>
                     <button className= { stylePaginator.paginatorBtn }
-                        onClick={nextPage}>
+                        onClick={ nextPage }>
                         { ' >> '}
                     </button>
                 </>  
