@@ -15,7 +15,6 @@ export default function FourOhFour() {
                 <Image  
                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
                     layout='fill'
-                    alt={name}
                     width='200'
                     height='200'
                 />

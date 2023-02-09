@@ -1,14 +1,24 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styleList from '../styles/List.module.css'
 
 export default function ListRow({ row }) {
     let sprite = row.url
     sprite = sprite.replace('https://pokeapi.co/api/v2/pokemon/', '')
     sprite = sprite.replace('/', '')
-
     let spriteUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/' + sprite + '.svg'
+    
+    console.log(row)
+    function goToPokemon() {
+        console.log(row.name)
+    }
+
     return (
-        <div className = { styleList.row }>
+        <Link className = { styleList.row }
+            href={{
+                pathname: '[pokemon]',
+                query: { pokemon: row.name },
+            }}>
             <div className = { styleList.rowWrapper }>
                 { row.name }
             </div>
@@ -21,6 +31,6 @@ export default function ListRow({ row }) {
                     height='30'
                 />
             </div>
-        </div>
+        </Link>
     )
 }

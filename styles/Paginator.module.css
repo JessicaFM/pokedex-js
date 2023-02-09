@@ -10,5 +10,5 @@
     background-color: white;
 }
 .paginatorBtn.active {
-    background-color: #FFD700;
+    background-color: rgba(255, 215, 0, .5);
 }

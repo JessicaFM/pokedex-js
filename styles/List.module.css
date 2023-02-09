@@ -6,6 +6,10 @@
     border: 1px solid #C0C0C0;
     border-bottom: none;
     background-color: white;
+    cursor: pointer;
+}
+.row:hover {
+    background-color: rgba(255, 215, 0, .5);
 }
 .row:last-child {
     border-bottom: 1px solid #C0C0C0;;

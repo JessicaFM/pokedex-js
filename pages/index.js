@@ -20,7 +20,7 @@ function Home() {
     handleOffsetChange()
     function handleOffsetChange() {
       setLoading(true)
-      fetch('https://pokeapi.co/api/v2/pokemon/?limit="' + limit + "&offset=" + offset)
+      fetch('https://pokeapi.co/api/v2/pokemon/?limit=' + limit + '&offset=' + offset)
       .then((res) => res.json())
       .then((data) => {
         total = data.count
@@ -39,16 +39,13 @@ function Home() {
       <List 
         pokemons = { data } 
       />
-      { offset}
       <Paginator
         totalPages = { total }
-        currentPage = { offset }
-        itemsPage = { limit }
         offset = { offset }
+        itemsPage = { limit }
         updateOffset = { updateOffset }
       />
     </>
-    
   ) 
 }
 
