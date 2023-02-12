@@ -8,15 +8,10 @@ export default function ListRow({ row }) {
     sprite = sprite.replace('/', '')
     let spriteUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/' + sprite + '.svg'
     
-    console.log(row)
-    function goToPokemon() {
-        console.log(row.name)
-    }
-
     return (
         <Link className = { styleList.row }
             href={{
-                pathname: '[pokemon]',
+                pathname: 'pokemons/[pokemon]',
                 query: { pokemon: row.name },
             }}>
             <div className = { styleList.rowWrapper }>

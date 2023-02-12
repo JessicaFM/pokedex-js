@@ -1,14 +1,12 @@
 .card {
+    display: flex;
     padding-top: 30px;
     border-radius: 10px;
     padding: 13px;
     background-color: #ffd700;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.card:hover {
-    -webkit-transform: scale(1.2) rotate(4deg);
-    transform: scale(1.2) rotate(4deg);
-}
+
 .cardFullHeight  {
     height: 100%;
 }
@@ -20,13 +18,16 @@
     padding: 0px 6px;
     padding-bottom: 30px;
 }
+.cHeader {
+    padding: 10px 0px;
+}
 .cardHeaderWrapper {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
 .title {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 600;
 }
 .experience {
@@ -85,4 +86,10 @@
     background-color: rgba(255, 255, 255, 0.5);
     padding: 0px 10px;
     color: #202020;
+}
+.cardBody {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+
 }

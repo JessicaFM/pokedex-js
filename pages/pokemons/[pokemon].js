@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Card from '../../components/card/card'
 
 function Pokemon({ data }) {
     const router = useRouter()
@@ -6,18 +7,9 @@ function Pokemon({ data }) {
     if (router.isFallback)  return <div>Loading...</div>;
     else {
         return (
-            <div className="">
-                <div className="">
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                    <Card 
-                        pokemon = { data } />
-                    <PokemonData 
-                        pokemon = { data }/>
-                </div>
-                <div className="pt-7 grid grid-cols-3 gap-4">
-                    
-                </div>
+            <div className="pb-5">
+                <Card 
+                    pokemon = { data } />
             </div>
         )
     }
@@ -34,7 +26,6 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const { params } = context
     let data = null
-    console.log(params)
     try {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${ params.pokemon }`)
         data = await res.json()
